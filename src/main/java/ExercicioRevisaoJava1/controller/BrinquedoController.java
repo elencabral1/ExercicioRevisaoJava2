@@ -53,8 +53,8 @@ public class BrinquedoController {
         return "add"; // Nome do arquivo HTML para adicionar brinquedos
     }
 
-    @PostMapping
-    public String createBrinquedo(@RequestBody Brinquedo brinquedo) {
+    @PostMapping("/add")
+    public String createBrinquedo(@ModelAttribute Brinquedo brinquedo) {
         try {
             brinquedoRepositorio.save(brinquedo);
             return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
@@ -75,8 +75,8 @@ public class BrinquedoController {
         }
     }
 
-    @PutMapping("/edit/{id}")
-    public String updateBrinquedo(@PathVariable("id") long id, @RequestBody Brinquedo brinquedo) {
+    @PostMapping("/edit/{id}")
+    public String updateBrinquedo(@PathVariable("id") long id, @ModelAttribute Brinquedo brinquedo) {
         Brinquedo _brinquedo = brinquedoRepositorio.findById(id);
         if (_brinquedo != null) {
             _brinquedo.setNome(brinquedo.getNome());
