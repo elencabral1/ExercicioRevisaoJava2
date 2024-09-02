@@ -33,8 +33,6 @@ Adicionamos também as bibliotecas Lombok, para simplificar a criação de códi
 <img src="https://github.com/user-attachments/assets/c471b26d-9ed4-49f1-ad22-db9740fa52cc" alt="springInitializer" width="500"/><br><br>
 <img src="https://github.com/user-attachments/assets/8393ab13-d660-4d28-bfd9-90f913332569" alt="dependencies" width="400"/><br><br>
 
-<h2>Listagem de todos os endpoints</h2>
-<img src="https://github.com/user-attachments/assets/41500aa3-182c-47a6-96f3-8a66f1049523" alt="endpoints" width="500"/><br><br>
 
 <h3>Requisição GET /brinquedos</h3>
 <p>Método: GET<br>
