@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Deletar Todos os Brinquedos</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
 <div class="container">
     <h1>Deletar Todos os Brinquedos</h1>
-    <form action="/brinquedos/delete-all" method="post">
-        <button type="submit">Deletar Todos</button>
+    <form action="/brinquedos/delete/${id}" method="post">
+    <button type="submit">Deletar Todos</button>
     </form>
     <a href="/brinquedos">Voltar à Lista</a>
 </div>

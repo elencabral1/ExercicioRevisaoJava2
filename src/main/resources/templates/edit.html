@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar Brinquedo</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+
 </head>
 <body>
 <h1>Editar Brinquedo</h1>
-<form action="/brinquedos/edit/{id}" method="post">
-    <input type="hidden" name="_method" value="post"> <!-- Indica que o método HTTP é POST, substitua no controlador -->
+<form action="/brinquedos/edit/${brinquedo.id}" method="post">
+    <input type="hidden" name="_method" value="put">
     <input type="hidden" name="id" th:value="${brinquedo.id}">
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" th:value="${brinquedo.nome}" required><br>
