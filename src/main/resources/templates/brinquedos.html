@@ -31,8 +31,8 @@
             <td th:text="${brinquedo.preco}"></td>
             <td>
                 <a th:href="@{/brinquedos/{id}(id=${brinquedo.id})}" class="button">Visualizar</a>
-                <a th:href="@{/brinquedos/edit/{id}(id=${brinquedo.id})}" class="button">Editar</a>
-                <a th:href="@{/brinquedos/delete/{id}(id=${brinquedo.id})}" class="button">Deletar</a>
+                <a th:href="@{/brinquedos/edit(id=${brinquedo.id})}" class="button">Editar</a>
+                <a th:href="@{/brinquedos/delete(id=${brinquedo.id})}" class="button">Deletar</a>
             </td>
         </tr>
         </tbody>
