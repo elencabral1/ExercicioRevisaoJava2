@@ -31,8 +31,11 @@
             <td th:text="${brinquedo.preco}"></td>
             <td>
                 <a th:href="@{/brinquedos/{id}(id=${brinquedo.id})}" class="button">Visualizar</a>
-                <a th:href="@{/brinquedos/edit(id=${brinquedo.id})}" class="button">Editar</a>
-                <a th:href="@{/brinquedos/delete(id=${brinquedo.id})}" class="button">Deletar</a>
+                <a th:href="@{/brinquedos/edit/{id}(id=${brinquedo.id})}" class="button">Editar</a>
+                <form th:action="@{/brinquedos/delete}" method="post" style="display:inline;">
+                    <input type="hidden" name="id" th:value="${brinquedo.id}">
+                    <button type="submit" class="button">Deletar</button>
+                </form>
             </td>
         </tr>
         </tbody>
