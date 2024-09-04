@@ -92,8 +92,8 @@ public class BrinquedoController {
         }
     }
 
-    @PostMapping("/delete/{id}")
-    public String deleteBrinquedo(@PathVariable("id") long id) {
+    @PostMapping("/delete")
+    public String deleteBrinquedo(@RequestParam("id") long id) {
         try {
             brinquedoRepositorio.deleteById(id);
             return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
@@ -102,14 +102,5 @@ public class BrinquedoController {
         }
     }
 
-    @PostMapping("/delete-all")
-    public String deleteAllBrinquedos() {
-        try {
-            brinquedoRepositorio.deleteAll();
-            return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
-        } catch (Exception e) {
-            return "error";
-        }
-    }
 
 }
