@@ -63,8 +63,20 @@ public class BrinquedoController {
         }
     }
 
-    @PostMapping("/edit")
-    public String updateBrinquedo(@RequestParam("id") long id, @ModelAttribute Brinquedo brinquedo) {
+    @GetMapping("/edit/{id}")
+    public String showEditBrinquedoForm(@PathVariable("id") long id, Model model) {
+        Brinquedo brinquedo = brinquedoRepositorio.findById(id);
+        if (brinquedo != null) {
+            model.addAttribute("brinquedo", brinquedo);
+            return "edit"; // Nome do arquivo HTML para editar brinquedos
+        } else {
+            model.addAttribute("error", new ErrorResponse("Brinquedo não encontrado.", "ID: " + id));
+            return "error";
+        }
+    }
+
+    @PostMapping("/edit/{id}")
+    public String updateBrinquedo(@PathVariable("id") long id, @ModelAttribute Brinquedo brinquedo) {
         Brinquedo _brinquedo = brinquedoRepositorio.findById(id);
         if (_brinquedo != null) {
             _brinquedo.setNome(brinquedo.getNome());
@@ -76,7 +88,7 @@ public class BrinquedoController {
             brinquedoRepositorio.save(_brinquedo);
             return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
         } else {
-            return "error"; // Retorna uma página de erro se o brinquedo não for encontrado
+            return "error";
         }
     }
 
