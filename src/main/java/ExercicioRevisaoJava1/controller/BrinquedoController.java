@@ -28,7 +28,7 @@ public class BrinquedoController {
             }
 
             model.addAttribute("brinquedos", brinquedos);
-            return "list"; // Nome do arquivo HTML para listar brinquedos
+            return "brinquedos"; // Nome do arquivo HTML alterado para 'brinquedos.html'
         } catch (Exception e) {
             model.addAttribute("error", new ErrorResponse("Erro ao listar brinquedos.", e.getMessage()));
             return "error";

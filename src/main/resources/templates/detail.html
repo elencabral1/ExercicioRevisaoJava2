@@ -16,7 +16,7 @@
     <p>Preço: <span th:text="${brinquedo.preco}"></span></p>
     <a th:href="@{/brinquedos/edit/{id}(id=${brinquedo.id})}" class="button">Editar</a>
     <a th:href="@{/brinquedos/delete/{id}(id=${brinquedo.id})}" class="button">Deletar</a>
-    <a href="/brinquedos" class="button">Voltar à Lista</a>
+    <a th:href="@{/brinquedos}" class="button">Voltar à Lista</a>
 </div>
 </body>
 </html>
